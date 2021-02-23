@@ -1,14 +1,17 @@
-import logo from './logo.svg';
+import { ThemeProvider } from '@material-ui/core';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import SiteLayout from './layouts/SiteLayout';
+import SiteRoutes from './routes/user';
+import theme from './styles/theme';
 
 function App() {
   return (
-    <div className="App">
-      <SiteLayout>
 
-      </SiteLayout>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <SiteRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
