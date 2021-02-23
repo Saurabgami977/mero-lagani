@@ -1,14 +1,14 @@
 import React from "react";
 import {
+    Box,
     CssBaseline,
     makeStyles,
 } from "@material-ui/core";
-// import theme from "../styles/theme";
 import SiteHeader from "../components/Header/SiteHeader";
 
 const styles = makeStyles(theme => ({
     root: {
-        display: "flex",
+        display: 'flex'
     },
     content: {
         flexGrow: 1,
@@ -16,10 +16,10 @@ const styles = makeStyles(theme => ({
         overflowX: "hidden",
     },
     appBarSpacer: theme.mixins.toolbar,
-    // container: {
-    //     paddingTop: theme.spacing(1),
-    //     paddingBottom: theme.spacing(4),
-    // },
+    container: {
+        paddingTop: theme.spacing(1),
+        paddingBottom: theme.spacing(4),
+    },
     alertContainer: {
         marginBottom: 10,
     },
@@ -35,7 +35,9 @@ const SiteLayout = ({ children }) => {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 {children}
-                {/* hello */}
+                <Box pt={4}>
+                    {/* <Footer /> */}
+                </Box>
             </main>
         </div>
     );

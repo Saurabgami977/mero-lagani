@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Home from '../../pages/site/home/Home';
+// import Home from '../../pages/site/home/Home';
 import UserHome from '../../pages/site/home/UserHome';
 import About from '../../pages/site/About';
 import Contact from '../../pages/site/Contact';
@@ -8,11 +8,12 @@ import { Route, Switch } from 'react-router-dom';
 import Login from '../../pages/auth/Login';
 import Register from '../../pages/auth/Register';
 import { useSelector } from 'react-redux';
+import Dashboard from '../../layouts/AdminLayout';
 
 function SiteRoutes() {
     const { user } = useSelector((state) => state.auth);
     const homeComponent = () => {
-        return user ? <UserHome /> : <Home />
+        return user ? <UserHome /> : <Dashboard />
     };
     const routes = [
         {

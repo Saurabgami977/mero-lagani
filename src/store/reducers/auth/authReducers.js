@@ -1,6 +1,6 @@
 import { authType } from "../../actions/types/authTypes";
 
-const initialState = { user: true };
+const initialState = { user: false };
 
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {

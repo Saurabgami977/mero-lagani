@@ -61,7 +61,7 @@ const SiteHeader = () => {
                                 component={Link}
                                 variant='contained'
                                 color='secondary'
-                                to="/register"
+                                to="/login"
                                 onClick={() => dispatch(logout())}
                             // className={classes.navBtn}
                             >
