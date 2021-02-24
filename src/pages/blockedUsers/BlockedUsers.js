@@ -27,7 +27,7 @@ function BlockedUsers() {
                 color="textSecondary"
                 noWrap
             >
-                Active Users
+                Blocked Users
             </Typography>
             <BlockedUsersTable
                 dashboard={true}

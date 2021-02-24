@@ -2,6 +2,7 @@ import React from "react";
 // import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import ActiveUsers from "../../pages/activeUsers/ActiveUsers";
+import PrivateRoute from '../../components/route/PrivateRoute'
 import BlockedUsers from "../../pages/blockedUsers/BlockedUsers";
 import AdminDashboard from "../../pages/dashboard/AdminDashboard";
 import ExpiredUsers from "../../pages/expiredUsers/ExpiredUsers";
@@ -46,18 +47,12 @@ function AdminRoutes() {
             component: ExpiredUsers,
         },
     ];
-
-    // const flattenRoutes = (routes) =>
-    //     routes
-    //         .map((route) => [route.routes ? flattenRoutes(route.routes) : [], route])
-    //         .flat(Infinity);
-
     return (
         <>
             <Switch>
                 {
                     routes.map(({ exact, path, component }, index) => (
-                        <Route key={index} path={path} exact component={component} />
+                        <Route path={path} exact component={component} />
                     ))
                 }
             </Switch>

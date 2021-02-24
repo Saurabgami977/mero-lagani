@@ -27,7 +27,7 @@ function ExpiredUsers() {
                 color="textSecondary"
                 noWrap
             >
-                Active Users
+                Expired Users
         </Typography>
             <BlockedUsersTable
                 dashboard={true}
