@@ -11,9 +11,11 @@ import { useSelector } from 'react-redux';
 import Dashboard from '../../layouts/AdminLayout';
 
 function SiteRoutes() {
-    const { user } = useSelector((state) => state.auth);
+    const { user, role } = useSelector((state) => state.auth);
     const homeComponent = () => {
-        return user ? <UserHome /> : <Dashboard />
+        return user && role === 'U'
+            ? <UserHome />
+            : user && role === 'A' ? <Dashboard /> : <Login />
     };
     const routes = [
         {

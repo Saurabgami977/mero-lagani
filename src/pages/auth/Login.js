@@ -1,5 +1,7 @@
 import { Card, CardContent, Container, CssBaseline, makeStyles, Typography } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import LoginForm from '../../components/forms/LoginForm';
 import SiteLayout from '../../layouts/SiteLayout'
 
@@ -13,6 +15,20 @@ const styles = makeStyles(theme => ({
 }))
 function Login() {
     const classes = styles();
+    let { user, role } = useSelector((state) => state.auth);
+    const admin = role === "A" ? true : false;
+    const users = role === "U" ? true : false;
+    const history = useHistory();
+
+    useEffect(() => {
+        if (user && admin) {
+            history.push("/admin");
+        } else if (user && users) {
+            history.push("/");
+        } else {
+            history.push("/login");
+        }
+    }, [history, admin, user, users]);
     return (
         <SiteLayout>
             <CssBaseline />
@@ -22,14 +38,6 @@ function Login() {
                 </Typography>
                 <Card>
                     <CardContent>
-                        {/* {message && (
-                        <DismissableAlert
-                        open={isOpen}
-                        type={type}
-                        message={message}
-                        closeAlert={closeAlert}
-                        />
-                    )} */}
                         <LoginForm />
                     </CardContent>
                 </Card>
