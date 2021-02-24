@@ -1,7 +1,10 @@
 import React from "react";
 // import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
+import ActiveUsers from "../../pages/activeUsers/ActiveUsers";
+import BlockedUsers from "../../pages/blockedUsers/BlockedUsers";
 import AdminDashboard from "../../pages/dashboard/AdminDashboard";
+import ExpiredUsers from "../../pages/expiredUsers/ExpiredUsers";
 import PendingRegistration from "../../pages/pendingRegistration/PendingRegistration";
 
 function AdminRoutes() {
@@ -29,6 +32,18 @@ function AdminRoutes() {
         {
             path: "/admin/pending-registration",
             component: PendingRegistration,
+        },
+        {
+            path: "/admin/active-customers",
+            component: ActiveUsers,
+        },
+        {
+            path: "/admin/blocked-customers",
+            component: BlockedUsers,
+        },
+        {
+            path: "/admin/expired-customers",
+            component: ExpiredUsers,
         },
     ];
 

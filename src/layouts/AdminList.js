@@ -23,7 +23,7 @@ const mainList = [
 
 const secondaryList = [
     { icon: <PaymentIcon />, name: 'Payments', link: '/admin/payments' },
-    { icon: <EventBusyIcon />, name: 'Expired Subscriptions', link: '/admin/expired-subscriptions' },
+    { icon: <EventBusyIcon />, name: 'Expired Subscriptions', link: '/admin/expired-customers' },
     { icon: <AssignmentIcon />, name: 'All Customers', link: '/admin/all-customers' },
 ]
 

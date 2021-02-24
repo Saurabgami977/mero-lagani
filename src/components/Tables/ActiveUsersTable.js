@@ -1,14 +1,7 @@
-import React from "react";
-import {
-    Table,
-    TableHead,
-    TableRow,
-    TableCell,
-    TableBody,
-    Button,
-} from "@material-ui/core";
+import { Button, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import React from 'react'
 
-function CustomersTable({ customers, dashboard, columns }) {
+function ActiveUsersTable({ customers, columns }) {
     return (
         <Table>
             <TableHead>
@@ -33,7 +26,7 @@ function CustomersTable({ customers, dashboard, columns }) {
                                     variant='contained'
                                     size='small'
                                     color={status === 'active' ? 'primary' : 'default'}>
-                                    {status}
+                                    {status === 'active' ? 'Disable Account' : 'Enable Account'}
                                 </Button>
                             </TableCell>
                         </TableRow>
@@ -45,7 +38,7 @@ function CustomersTable({ customers, dashboard, columns }) {
                     )}
             </TableBody>
         </Table>
-    );
+    )
 }
 
-export default CustomersTable;
+export default ActiveUsersTable
